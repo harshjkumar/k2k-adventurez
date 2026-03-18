@@ -1,0 +1,66 @@
+================================================================================
+K2K ADVENTUREZ — TRIPS LISTING PAGE CONTENT
+================================================================================
+
+--- HERO SECTION ---
+
+Overline: Curated Expeditions
+
+Headline: The Road Awaits You.
+
+Tagline: Handcrafted Royal Enfield expeditions across India's most extraordinary terrains. From the world's highest passes to ancient monastery trails — every route is a story waiting to unfold.
+
+Stats:
+- Routes: (dynamic count of packages)+
+- Max Altitude: 18,380 ft
+- Riders: 10K+
+
+CTA: Explore Expeditions
+Hint: Scroll to discover all routes
+
+
+--- EXPEDITION ARCHIVES SECTION ---
+
+Section Overline: Premium Expeditions
+Section Title: Expedition Archives
+
+
+--- TRIP CATEGORIES ---
+
+1. Leh Ladakh (cat-leh-ladakh)
+   Description: (set from category data — see trip data file)
+   Region: Ladakh, J&K
+
+2. Ex Leh – Hanle & Umling La (cat-ex-leh-hanle)
+   Region: Eastern Ladakh
+
+3. Srinagar – Leh (cat-srinagar-leh)
+   Region: Kashmir to Ladakh
+
+4. Leh – Srinagar (cat-leh-srinagar)
+   Region: Ladakh to Kashmir
+
+5. Leh – Manali (cat-leh-manali)
+   Region: Ladakh to Himachal
+
+(Plus additional categories as defined in trips.ts defaultCategories)
+
+
+--- TRIP DETAIL PAGE CONTENT ---
+
+Cancellation Policy (shown on each trip detail page):
+- 30 days or more before departure: 75% will be refunded.
+- 29 – 15 days before departure: 40% will be refunded.
+- Less than 15 days before departure: No refunds.
+- Initial booking amount is non-refundable.
+
+FAQs (shown on each trip detail page):
+
+Q: What is the best time to visit?
+A: The best time is from May to September, when the weather is pleasant and most roads are open for travel.
+
+Q: How can I prevent altitude sickness?
+A: Since the terrain is located at high altitude, it is important to allow proper acclimatization. Rest on the first day, drink plenty of water.
+
+Q: Do I need permits to visit certain places?
+A: Yes, some areas require Inner Line Permits (ILP) for travelers. These permits are usually arranged by the tour operator.

@@ -1,0 +1,101 @@
+================================================================================
+K2K ADVENTUREZ — FOOTER & COMPANY INFO
+================================================================================
+
+--- COMPANY ---
+
+Brand Name: K2K Adventurez
+Tagline: A passionate travel company dedicated to creating unforgettable travel experiences. We turn travel dreams into unforgettable memories.
+
+Contact:
+- Phone: +91 99999 99999
+- Email: ride@k2kadventurez.com
+- Address: Manali, Himachal Pradesh, India
+
+Social Media:
+- Instagram: https://instagram.com/k2kadventurez
+- YouTube: https://youtube.com/@k2kadventurez
+
+Copyright: © 2026 K2K Adventurez. All rights reserved. Ride responsibly.
+
+
+--- FOOTER LINKS ---
+
+Adventures:
+- Leh Ladakh → /trips
+- Spiti Valley → /trips
+- Manali - Rohtang → /trips
+- Rajasthan Desert → /trips
+- Meghalaya Explorer → /trips
+- All Trips → /trips
+
+Company:
+- About K2K → /about
+- Why Choose Us → /why-us
+- Gallery → /gallery
+- Partner With Us → /contact
+- Blog → /blogs
+
+Support:
+- FAQs → /faq
+- Travel Guidelines → /guidelines
+- Cancellation Policy → /policies/cancellation
+- Privacy Policy → /policies/privacy
+- Contact Us → /contact
+
+
+--- TRIP CATEGORIES (from trips.ts defaultCategories) ---
+
+1. Leh Ladakh Expeditions (cat-leh-ladakh)
+   Slug: leh-ladakh
+   Description: Epic high-altitude expeditions covering the world's highest motorable passes, pristine lakes, and ancient monasteries of Ladakh.
+   Region: Ladakh, J&K
+   Order: 1
+
+2. Ex Leh — Hanle & Umling La (cat-ex-leh-hanle)
+   Slug: ex-leh-hanle
+   Description: Venture into the remote eastern Ladakh reaching Umling La — the world's highest motorable road at 19,024 ft.
+   Region: Eastern Ladakh
+   Order: 2
+
+3. Srinagar to Leh (cat-srinagar-leh)
+   Slug: srinagar-leh
+   Description: Journey from the paradise of Kashmir through Zoji La Pass into the stark mountains of Ladakh.
+   Region: Kashmir to Ladakh
+   Order: 3
+
+4. Leh to Srinagar (cat-leh-srinagar)
+   Slug: leh-srinagar
+   Description: Descend from the high-altitude moonscape of Ladakh into the lush green valleys of Kashmir.
+   Region: Ladakh to Kashmir
+   Order: 4
+
+5. Leh to Manali (cat-leh-manali)
+   Slug: leh-manali
+   Description: Cross legendary Gata Loops and Baralacha La as you ride from Ladakh to the green paradise of Manali.
+   Region: Ladakh to Himachal
+   Order: 5
+
+6. Manali to Leh (cat-manali-leh)
+   Slug: manali-leh
+   Description: Begin from the pine forests of Manali, cross Atal Tunnel, and ascend to the roof of the world.
+   Region: Himachal to Ladakh
+   Order: 6
+
+7. Spiti Valley (cat-spiti)
+   Slug: spiti-valley
+   Description: Discover the middle land between India and Tibet through ancient monasteries, crystal rivers, and stark mountain deserts.
+   Region: Spiti, Himachal Pradesh
+   Order: 7
+
+8. Kashmir (cat-kashmir)
+   Slug: kashmir
+   Description: Experience the paradise on earth — from Dal Lake to Gulmarg, through saffron fields and Mughal gardens.
+   Region: Kashmir, J&K
+   Order: 8
+
+9. Rajasthan (cat-rajasthan)
+   Slug: rajasthan
+   Description: Ride through the land of kings — majestic forts, golden deserts, and vibrant culture of royal Rajasthan.
+   Region: Rajasthan
+   Order: 9

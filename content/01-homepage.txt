@@ -1,0 +1,93 @@
+================================================================================
+K2K ADVENTUREZ — HOMEPAGE CONTENT
+================================================================================
+
+--- HERO SECTION ---
+
+Badge: India's #1 Adventure Travel Co. | Rating: 4.9/5
+
+Headline: Ride The Impossible.
+
+Subheading: Unforgettable expeditions through Ladakh, Kashmir, Spiti & beyond. Curated itineraries. Pure adventure.
+
+CTA Buttons:
+- Explore Adventures → /trips
+- Book a Custom Trip → /contact
+
+Hero Slides:
+1. Route Atlas — India's Most Epic Routes — 18,380 ft
+2. How It Works — Your Adventure in 4 Steps — 4 Simple Steps
+3. Rider Stories — Real Riders, Real Adventures — 10,000+ Happy Riders
+4. Let's Ride Together — Book Your Dream Ride — 365 Days Active
+5. Legendary Routes — Choose Your Destiny — 50+ Epic Routes
+
+Ticker Items:
+- Leh Ladakh
+- 18,380 ft
+- Spiti Valley
+- 10K Riders
+- Rajasthan Desert
+- Chandratal
+- Meghalaya
+- 365 Days
+
+Left Vertical Text: K2K Adventurez
+
+
+--- HOW IT WORKS SECTION ---
+
+Section Title: How It Works — Your Adventure in 4 Simple Steps
+
+Subheading: From booking to memories, we handle every detail so you can focus on the ride of your life.
+
+Step 01: Choose Your Ride
+Browse our curated expeditions and pick the one that matches your vibe — beginner, moderate, or expert-level trails.
+
+Step 02: Gear Up
+We provide a fully serviced Royal Enfield, riding gear, helmets, and everything you need. Just bring your spirit of adventure.
+
+Step 03: Ride & Explore
+Follow our expert ride captains through breathtaking terrains. Backup vehicle, mechanic, and emergency support ride with you.
+
+Step 04: Capture Memories
+Professional photography, GoPro mounts, drone shots — we make sure every moment of your epic ride is documented forever.
+
+
+--- TESTIMONIALS / RIDER STORIES SECTION ---
+
+Section Title: What Our Riders Say
+
+Testimonial 1:
+Name: Arjun Mehta
+Trip: Leh Ladakh Expedition
+Rating: 5/5
+Location: Mumbai, Maharashtra
+Review: "Absolutely life-changing experience! The K2K team handled everything flawlessly — from bike maintenance at 18,000 ft to the warmest hospitality at every stop. Crossing Khardung La on a Royal Enfield was a dream come true."
+
+Testimonial 2:
+Name: Priya Sharma
+Trip: Spiti Valley Circuit
+Rating: 5/5
+Location: Delhi, NCR
+Review: "As a solo female rider, safety was my priority. K2K Adventurez made me feel secure every step of the way. The ride through Spiti's moonscape was surreal. Key Monastery at sunrise is forever etched in my heart."
+
+Testimonial 3:
+Name: Rahul Krishnan
+Trip: Rajasthan Royal Ride
+Rating: 5/5
+Location: Bengaluru, Karnataka
+Review: "Our group of 12 had the most incredible time! Desert camping under the stars in Jaisalmer, riding past ancient forts, and the camaraderie with fellow riders — K2K delivers an experience money can't buy elsewhere."
+
+Testimonial 4:
+Name: Deepak Verma
+Trip: Manali-Rohtang Blast
+Rating: 5/5
+Location: Pune, Maharashtra
+Review: "First time on a Royal Enfield and first time in the mountains. K2K made it effortless. The ride captain was patient, the route was stunning, and the bonfires in Manali were magical. Already planning my Ladakh trip!"
+
+Testimonial 5:
+Name: Sneha Gupta
+Trip: Meghalaya Explorer
+Rating: 5/5
+Location: Kolkata, West Bengal
+Review: "Meghalaya was a hidden gem! Riding through clouds, crossing crystal-clear rivers, and trekking to living root bridges. K2K's Northeast circuit is underrated and absolutely magical. Every rider needs to do this!"
