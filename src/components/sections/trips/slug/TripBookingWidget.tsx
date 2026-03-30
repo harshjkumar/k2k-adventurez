@@ -13,12 +13,9 @@ export const TripBookingWidget = ({ trip }: TripBookingWidgetProps) => {
   const pricing = trip.pricing || [];
 
   const [selectedDepartureId, setSelectedDepartureId] = useState<string>(departures[0]?.id || "");
-  const [selectedPricingLabel, setSelectedPricingLabel] = useState<string>(pricing[0]?.label || "");
-
   const selectedDeparture = departures.find(d => d.id === selectedDepartureId) || departures[0] || null;
-  const selectedPricing = pricing.find(p => p.label === selectedPricingLabel) || pricing[0] || null;
 
-  const displayPrice = selectedPricing ? selectedPricing.price : (pricing.length > 0 ? Math.min(...pricing.map(p => p.price)) : 0);
+  const displayPrice = pricing.length > 0 ? Math.min(...pricing.map(p => p.price)) : 0;
 
   return (
     <div className="bg-[#FAF9F6] border border-charcoal/10 rounded-xl p-6 md:p-8 sticky top-32 shadow-xl shadow-charcoal/5">
@@ -27,34 +24,21 @@ export const TripBookingWidget = ({ trip }: TripBookingWidgetProps) => {
         Secure your spot for the adventure of a lifetime.
       </p>
 
-      <div className="mb-6 flex items-baseline gap-2">
-        <span className="text-sm font-nav uppercase tracking-widest text-charcoal/50">Price</span>
-        <span className="text-3xl font-serif text-charcoal">₹{displayPrice.toLocaleString("en-IN")}</span>
-        <span className="text-xs font-nav text-charcoal/50">/ person</span>
+      <div className="mb-2">
+        <span className="text-sm font-nav uppercase tracking-widest text-charcoal/50">Starting Price from</span>
+        <div className="flex items-baseline gap-1 mt-1">
+          <span className="text-3xl font-serif text-charcoal">₹{displayPrice.toLocaleString("en-IN")}</span>
+          <span className="text-xs font-nav text-charcoal/50">/ person</span>
+        </div>
+      </div>
+      <div className="mb-6 px-3 py-2 bg-accent/10 border border-accent/30 rounded-lg">
+        <p className="text-xs font-nav font-semibold text-accent text-center tracking-wide">
+          👉 Click &quot;Book Now&quot; to select other packages
+        </p>
       </div>
 
       <div className="space-y-5 mb-8">
         
-        {/* Pricing Tier Selection */}
-        {pricing.length > 0 && (
-          <div className="flex flex-col gap-2 text-charcoal/70">
-            <label className="text-xs uppercase tracking-widest font-nav flex items-center gap-2">
-              <Tag size={14} className="text-accent" />
-              Package Type
-            </label>
-            <select 
-              className="w-full bg-white border border-charcoal/20 rounded-lg p-3 text-sm font-medium focus:outline-none focus:border-accent text-charcoal"
-              value={selectedPricingLabel}
-              onChange={(e) => setSelectedPricingLabel(e.target.value)}
-            >
-              {pricing.map(p => (
-                <option key={p.label} value={p.label}>
-                  {p.label} - ₹{p.price.toLocaleString("en-IN")}
-                </option>
-              ))}
-            </select>
-          </div>
-        )}
 
         {/* Departure Date Selection */}
         <div className="flex flex-col gap-2 text-charcoal/70">
@@ -94,7 +78,7 @@ export const TripBookingWidget = ({ trip }: TripBookingWidgetProps) => {
       </div>
 
       <Link
-        href={`/trips/${trip.slug}/book?date=${selectedDepartureId}&package=${encodeURIComponent(selectedPricingLabel)}`}
+        href={`/trips/${trip.slug}/book?date=${selectedDepartureId}`}
         className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-charcoal text-[#FAF9F6] rounded-full text-xs font-nav font-medium uppercase tracking-widest transition-colors duration-300 hover:bg-accent group"
       >
         Book Now

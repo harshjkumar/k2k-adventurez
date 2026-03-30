@@ -56,7 +56,7 @@ export function HeroSlider({ dbSlides }: HeroSliderProps) {
           initial={{ opacity: 0, scale: 1.05 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.98 }}
-          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] as const }}
           className="absolute inset-0"
         >
           <Image
@@ -79,7 +79,7 @@ export function HeroSlider({ dbSlides }: HeroSliderProps) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20, transition: { duration: 0.4 } }}
-            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] as const }}
             className="w-full flex flex-col items-center"
           >
             <motion.div

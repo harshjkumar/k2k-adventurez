@@ -54,7 +54,7 @@ export function TestimonialsSection({ dbTestimonials }: TestimonialsSectionProps
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] as const }}
               className="text-center"
             >
               <Quote size={48} className="mx-auto text-accent/20 mb-8" />

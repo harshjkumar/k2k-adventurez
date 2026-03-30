@@ -1,4 +1,4 @@
-import { Metadata } from "next/metadata";
+import { Metadata } from "next";
 import { PrivacyPolicyClient } from "@/components/sections/policies/PrivacyPolicyClient";
 
 export const metadata: Metadata = {

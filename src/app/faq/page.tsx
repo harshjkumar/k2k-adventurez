@@ -1,4 +1,4 @@
-import { Metadata } from "next/metadata";
+import { Metadata } from "next";
 import { FAQPageClient } from "@/components/sections/faq/FAQPageClient";
 
 export const metadata: Metadata = {

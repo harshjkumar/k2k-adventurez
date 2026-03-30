@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Instagram, Youtube, Facebook, Twitter } from "lucide-react";
 
 const adventureLinks = [
-  { label: "Leh Ladakh", href: "/trips" },
+  { label: "Leh Ladakh", href: "/leh-ladakh" },
   { label: "Spiti Valley", href: "/trips" },
   { label: "Manali - Rohtang", href: "/trips" },
   { label: "Rajasthan Desert", href: "/trips" },
@@ -75,12 +75,12 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand column */}
           <div className="lg:col-span-2">
-            <Link href="/" className="inline-block mb-6">
-              <span className="font-serif text-2xl font-semibold tracking-wide text-white uppercase">
-                K2K
+            <Link href="/" className="inline-block mb-6 group flex flex-col items-start leading-none text-white transition-colors hover:text-white/80">
+              <span className="font-serif text-[26px] lg:text-[30px] font-semibold tracking-[0.02em]">
+                K<span className="text-[22px] lg:text-[26px]">2</span>K
               </span>
-              <span className="font-serif text-xl font-light italic text-accent ml-0.5">
-                adventurez
+              <span className="font-nav text-[8px] lg:text-[9px] font-medium uppercase tracking-[0.35em] text-white/70 -mt-1">
+                Adventurez
               </span>
             </Link>
             <p className="text-sm text-warm-gray leading-relaxed max-w-sm mb-8">

@@ -44,10 +44,7 @@ export function TripListCard({ trip, index }: TripListCardProps) {
           fill
           className="object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
         />
-        {/* Map Button Overlay */}
-        <button className="absolute bottom-4 right-4 bg-white px-3 py-1.5 flex items-center gap-1.5 text-charcoal text-[10px] font-medium uppercase tracking-wider hover:bg-gray-50 transition-colors rounded-sm shadow-sm">
-          <Map size={12} /> Map
-        </button>
+        {/* Removed Map Button as per request */}
       </div>
 
       {/* Content Block */}
@@ -55,44 +52,10 @@ export function TripListCard({ trip, index }: TripListCardProps) {
       <Link href={`/trips/${trip.slug}`} className="group block h-full">
         {/* Trip Title */}
         <h3 className="text-[#102a43] text-xl font-bold leading-tight mb-4 group-hover:text-red-800 transition-colors">
-          {trip.title}
+          {trip.displayTitle || trip.title}
         </h3>
 
-        {/* Route Row */}
-        <div className="flex items-start justify-between mb-4">
-          <div className="w-[42%]">
-            <h4 className="text-red-800 text-lg md:text-xl font-bold leading-tight mb-0.5">
-              {startLoc[0]}
-            </h4>
-            {startLoc[1] && startLoc[1].trim() !== startLoc[0].trim() && (
-              <p className="text-[#102a43] text-sm font-bold">{startLoc[1]}</p>
-            )}
-          </div>
-          <div className="w-[16%] flex justify-center pt-2 text-gray-400">
-            <ArrowRight size={18} strokeWidth={2} />
-          </div>
-          <div className="w-[42%] text-right">
-            <h4 className="text-red-800 text-lg md:text-xl font-bold leading-tight mb-0.5">
-              {endLoc[0]}
-            </h4>
-            {endLoc[1] && endLoc[1].trim() !== endLoc[0].trim() && (
-              <p className="text-[#102a43] text-sm font-bold">{endLoc[1]}</p>
-            )}
-          </div>
-        </div>
 
-        {/* Dates Row (Dummy dates if departures are not fetched yet) */}
-        <div className="flex items-center justify-between text-xs text-gray-600 mb-6 font-medium">
-          <span>{trip.departures?.[0]?.startDate || "02 Apr 2026"}</span>
-          <span>{trip.departures?.[0]?.endDate || "13 Apr 2026"}</span>
-        </div>
-
-        {/* Info Row (Duration) */}
-        <div className="flex items-center justify-center text-[11px] text-gray-500 mb-5 pb-5 border-b border-gray-200">
-          <div className="flex items-center gap-1.5">
-            <span className="font-bold text-[22px] leading-none text-red-800">{trip.durationNights} Nights</span>
-          </div>
-        </div>
 
         {/* Tag */}
         <div className="mb-6">

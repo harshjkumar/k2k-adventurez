@@ -38,6 +38,7 @@ export interface Trip {
   category?: string; // Fallback or direct category
   trip_categories?: TripCategory[];
   title: string;
+  displayTitle?: string;
   slug: string;
   tagline: string;
   description: string;
@@ -65,6 +66,7 @@ export interface Trip {
   isActive: boolean;
   coverImage: string;
   galleryImages: string[];
+  keywords?: string[];
   metaTitle?: string;
   metaDescription?: string;
   createdAt?: string;

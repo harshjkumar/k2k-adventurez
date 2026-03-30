@@ -35,7 +35,6 @@ export const TripPricing = ({ pricing, inclusions, exclusions }: TripPricingProp
               ₹{option.price.toLocaleString("en-IN")}
               <span className="text-sm font-sans text-charcoal/50 ml-1">/ rider</span>
             </div>
-            <p className="text-xs text-charcoal/50 uppercase tracking-widest">Taxes Included</p>
           </motion.div>
         ))}
       </motion.div>

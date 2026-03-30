@@ -13,6 +13,7 @@ interface TripsListingClientProps {
 export function TripsListingClient({ initialTrips }: TripsListingClientProps) {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [selectedTrip, setSelectedTrip] = useState<string>("");
+  const [selectedMonth, setSelectedMonth] = useState<string>("");
 
   // Extract unique categories from trips
   const categories = useMemo(() => {
@@ -25,6 +26,29 @@ export function TripsListingClient({ initialTrips }: TripsListingClientProps) {
       }
     });
     return Array.from(cats).sort();
+  }, [initialTrips]);
+
+  // Extract unique months from trips
+  const availableMonths = useMemo(() => {
+    const months = new Set<string>();
+    initialTrips.forEach(t => {
+      if (t.departures && Array.isArray(t.departures)) {
+        t.departures.forEach((d: any) => {
+          if (d.startDate || d.start_date) {
+            const dateStr = d.startDate || d.start_date;
+            if (typeof dateStr === "string") {
+              const date = new Date(dateStr);
+              if (!isNaN(date.getTime())) {
+                const monthStr = date.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+                months.add(monthStr);
+              }
+            }
+          }
+        });
+      }
+    });
+    // Sort chronologically
+    return Array.from(months).sort((a, b) => new Date(a).getTime() - new Date(b).getTime());
   }, [initialTrips]);
 
   // Filter trips by category and selected trip
@@ -42,23 +66,30 @@ export function TripsListingClient({ initialTrips }: TripsListingClientProps) {
     if (selectedTrip) {
       result = result.filter(t => t.id === selectedTrip);
     }
+    
+    if (selectedMonth) {
+      result = result.filter(t => {
+        if (!t.departures || !Array.isArray(t.departures)) return false;
+        return t.departures.some((d: any) => {
+          const dateStr = d.startDate || d.start_date;
+          if (typeof dateStr === "string") {
+            const date = new Date(dateStr);
+            if (!isNaN(date.getTime())) {
+              return date.toLocaleDateString('en-US', { month: 'long', year: 'numeric' }) === selectedMonth;
+            }
+          }
+          return false;
+        });
+      });
+    }
+
     return result;
-  }, [initialTrips, selectedCategory, selectedTrip]);
+  }, [initialTrips, selectedCategory, selectedTrip, selectedMonth]);
 
   return (
     <div className="relative bg-[#FAF9F6] min-h-screen pt-32 pb-24 overflow-hidden">
       {/* Background Map */}
-      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-        <div 
-          className="absolute inset-0 w-full h-full bg-no-repeat bg-center opacity-[0.12]"
-          style={{ 
-            backgroundImage: 'url("/MapChart_Map.svg")',
-            backgroundSize: '250%',
-            filter: 'grayscale(100%) brightness(1.1)',
-            mixBlendMode: 'multiply'
-          }}
-        />
-      </div>
+      <div className="bg-map-texture" />
 
       <div className="relative z-10 max-w-[1440px] mx-auto px-6 lg:px-12">
         {/* The top filter and view toggle section */}
@@ -70,6 +101,9 @@ export function TripsListingClient({ initialTrips }: TripsListingClientProps) {
           trips={initialTrips}
           selectedTrip={selectedTrip}
           onSelectTrip={setSelectedTrip}
+          availableMonths={availableMonths}
+          selectedMonth={selectedMonth}
+          onSelectMonth={setSelectedMonth}
         />
 
         {/* The Grid of Trips */}
@@ -97,7 +131,7 @@ export function TripsListingClient({ initialTrips }: TripsListingClientProps) {
           <div className="text-center py-32 text-charcoal/50">
             <p className="text-lg">No journeys found.</p>
             <button 
-              onClick={() => { setSelectedCategory(null); setSelectedTrip(""); }}
+              onClick={() => { setSelectedCategory(null); setSelectedTrip(""); setSelectedMonth(""); }}
               className="mt-4 text-sm text-accent underline"
             >
               Reset Filters

@@ -19,17 +19,7 @@ export default function TripDetailClient({ trip }: TripDetailClientProps) {
   return (
     <div className="relative bg-[#FAF9F6] min-h-screen overflow-hidden">
       {/* Background Map */}
-      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-        <div 
-          className="absolute inset-0 w-full h-full bg-no-repeat bg-center opacity-[0.1]"
-          style={{ 
-            backgroundImage: 'url("/MapChart_Map.svg")',
-            backgroundSize: '250%',
-            filter: 'grayscale(100%) brightness(1.1)',
-            mixBlendMode: 'multiply'
-          }}
-        />
-      </div>
+      <div className="bg-map-texture" />
 
       <div className="relative z-10">
       {/* Hero Section */}
@@ -49,6 +39,11 @@ export default function TripDetailClient({ trip }: TripDetailClientProps) {
                 <Star size={12} className="fill-accent text-accent" /> {trip.rating} <span className="text-charcoal/60">({trip.reviewCount})</span>
               </span>
             </div>
+            {trip.displayTitle && (
+              <p className="font-nav text-sm md:text-base font-semibold uppercase tracking-[0.15em] text-accent mb-3">
+                {trip.displayTitle}
+              </p>
+            )}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-charcoal mb-4 leading-tight">
               {trip.title}
             </h1>
@@ -101,7 +96,7 @@ export default function TripDetailClient({ trip }: TripDetailClientProps) {
           <div className="w-full lg:w-2/3">
             {/* Quick Stats Grid */}
             <motion.div 
-              className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16 pb-12 border-b border-charcoal/10"
+              className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-16 pb-12 border-b border-charcoal/10"
               variants={{
                 hidden: { opacity: 0 },
                 show: { opacity: 1, transition: { staggerChildren: 0.1 } }
@@ -114,12 +109,11 @@ export default function TripDetailClient({ trip }: TripDetailClientProps) {
                 { icon: Clock, label: "Duration", value: `${trip.durationDays} Days, ${trip.durationNights} Nights` },
                 { icon: Map, label: "Region", value: trip.region },
                 { icon: Mountain, label: "Max Altitude", value: `${trip.maxAltitudeFt.toLocaleString()} ft` },
-                { icon: Info, label: "Difficulty", value: trip.difficulty, capitalize: true }
               ].map((stat, idx) => (
                 <motion.div key={idx} variants={{ hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0 } }} className="flex flex-col gap-2">
                   <stat.icon className="text-accent mb-2" size={28} strokeWidth={1.5} />
                   <span className="text-xs font-nav uppercase tracking-widest text-charcoal/50">{stat.label}</span>
-                  <span className={`font-serif text-lg text-charcoal ${stat.capitalize ? "capitalize" : ""}`}>{stat.value}</span>
+                  <span className="font-serif text-lg text-charcoal">{stat.value}</span>
                 </motion.div>
               ))}
             </motion.div>
@@ -204,22 +198,7 @@ export default function TripDetailClient({ trip }: TripDetailClientProps) {
               </motion.div>
             )}
 
-            {/* Cancellation Policy */}
-            <motion.div
-              className="bg-charcoal/5 rounded-2xl p-8 border border-charcoal/10 scroll-mt-32 mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8 }}
-            >
-              <h3 className="font-serif text-2xl text-charcoal mb-4 uppercase tracking-tight">Cancellation Policy</h3>
-              <p className="text-charcoal/70 mb-4 leading-relaxed">
-                We understand that plans can change. Cancellations made 30 days or more prior to the departure date will receive a full refund, excluding any non-refundable deposits.
-              </p>
-              <a href="/policies/cancellation" className="text-sm font-nav uppercase tracking-widest text-accent hover:text-charcoal transition-colors underline underline-offset-4">
-                Read Full Policy
-              </a>
-            </motion.div>
+
 
             {/* Preparation Policy / Gear Guide */}
             <motion.div

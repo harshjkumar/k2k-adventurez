@@ -13,9 +13,12 @@ interface TripFiltersProps {
   trips?: Trip[];
   selectedTrip?: string;
   onSelectTrip?: (tripId: string) => void;
+  availableMonths?: string[];
+  selectedMonth?: string;
+  onSelectMonth?: (month: string) => void;
 }
 
-export function TripFilters({ totalCount, categories, selectedCategory, onSelectCategory, trips = [], selectedTrip = "", onSelectTrip = () => {} }: TripFiltersProps) {
+export function TripFilters({ totalCount, categories, selectedCategory, onSelectCategory, trips = [], selectedTrip = "", onSelectTrip = () => {}, availableMonths = [], selectedMonth = "", onSelectMonth = () => {} }: TripFiltersProps) {
   return (
     <div className="w-full">
       {/* ── Heading ───────────────────────────────────────── */}
@@ -81,10 +84,19 @@ export function TripFilters({ totalCount, categories, selectedCategory, onSelect
         
         <div className="flex-1 w-full relative">
           <label className="block text-sm text-charcoal mb-2">When?</label>
-          <button className="w-full flex items-center justify-between border-b border-charcoal/30 pb-2 text-left hover:border-charcoal transition-colors group">
-            <span className="text-charcoal/60 group-hover:text-charcoal transition-colors">Any Time</span>
-            <ChevronDown size={16} className="text-charcoal/40" />
-          </button>
+          <div className="relative border-b border-charcoal/30 flex items-center group hover:border-charcoal transition-colors">
+            <select
+              value={selectedMonth}
+              onChange={(e) => onSelectMonth(e.target.value)}
+              className="w-full pb-2 text-left appearance-none bg-transparent outline-none cursor-pointer text-charcoal/60 hover:text-charcoal transition-colors z-10"
+            >
+              <option value="">Any Time</option>
+              {availableMonths.map(month => (
+                <option key={month} value={month} className="text-charcoal">{month}</option>
+              ))}
+            </select>
+            <ChevronDown size={16} className="text-charcoal/40 absolute right-0 bottom-2 pointer-events-none" />
+          </div>
         </div>
 
         <button className="flex items-center gap-2 pb-2 text-charcoal hover:text-accent transition-colors shrink-0">
@@ -99,7 +111,7 @@ export function TripFilters({ totalCount, categories, selectedCategory, onSelect
           {totalCount} journeys available
         </p>
         <button 
-          onClick={() => { onSelectCategory("All Expeditions"); onSelectTrip(""); }}
+          onClick={() => { onSelectCategory("All Expeditions"); onSelectTrip(""); onSelectMonth(""); }}
           className="text-[10px] font-nav uppercase tracking-widest text-accent border-b border-accent pb-0.5 hover:text-charcoal hover:border-charcoal transition-colors"
         >
           RESET FILTERS

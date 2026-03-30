@@ -1,4 +1,4 @@
-import { Metadata } from "next/metadata";
+import { Metadata } from "next";
 import { WhyUsPageClient } from "@/components/sections/why-us/WhyUsPageClient";
 
 export const metadata: Metadata = {

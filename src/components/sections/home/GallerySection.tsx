@@ -23,17 +23,7 @@ const GallerySection = () => {
             className="relative py-28 overflow-hidden bg-[#FAF9F6]"
         >
             {/* Background Map */}
-            <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-                <div 
-                    className="absolute inset-0 w-full h-full bg-no-repeat bg-center opacity-[0.12]"
-                    style={{ 
-                        backgroundImage: 'url("/MapChart_Map.svg")',
-                        backgroundSize: '200%',
-                        filter: 'grayscale(100%) brightness(1.1)',
-                        mixBlendMode: 'multiply'
-                    }}
-                />
-            </div>
+            <div className="bg-map-texture" />
 
             {/* Top accent */}
             <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-accent to-transparent opacity-30 z-10" />
